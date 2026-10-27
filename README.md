@@ -24,6 +24,15 @@ Run these numbered commands from the repository root in **Windows PowerShell**. 
 
 On macOS/Linux, activate the environment with `source .venv/bin/activate` instead of command 2. The generator's final line must be exactly `generated: customers=1200 products=40 orders_raw=13084 tickets=164`. Part A's validation script prints `ALL CHECKPOINTS PASSED`. Commands use fixed random seeds where applicable; the agent ledger includes timestamps, so its timestamp text naturally changes between runs.
 
+### Publish the repository on GitHub
+
+The downloadable project already has a local Git repository on branch `main`, but it has no remote and is not public yet. Create a **new empty public repository** on GitHub (do not initialise it with another README), then run these commands from this project folder, replacing the placeholder with your GitHub username:
+
+1. `git remote add origin https://github.com/<YOUR-USERNAME>/instamart-customer-copilot.git`
+2. `git push -u origin main`
+
+After pushing, verify the public link resolves to `https://github.com/<YOUR-USERNAME>/instamart-customer-copilot/tree/main`. Do not submit a different branch.
+
 # Part A
 
 ### Raw-data audit
