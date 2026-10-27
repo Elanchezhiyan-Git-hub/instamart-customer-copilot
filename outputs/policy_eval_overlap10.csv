@@ -1,0 +1,18 @@
+question,expected_doc,doc_hit,fact_hit,fallback,expected_fact,answer,sources
+What delivery time makes a completed order eligible for a full refund?,refund_policy.txt,True,True,False,more than 45 minutes,"order is delivered in more than 45 minutes, the customer receives a full refund of the order amount.",refund_policy.txt;refund_policy.txt;privacy_policy.txt
+Who must approve a refund above INR 1000?,refund_policy.txt,True,True,False,human support lead,A refund above INR 1000 must be approved by a human support lead before money is returned.,refund_policy.txt;refund_policy.txt;refund_policy.txt
+How many days do I have to raise a refund request?,refund_policy.txt,True,True,False,within 7 days,A refund request must be raised within 7 days of the delivery date.,refund_policy.txt;privacy_policy.txt;refund_policy.txt
+What is the delivery fee on small orders?,delivery_policy.txt,True,True,False,INR 25,"A delivery fee of INR 25 is charged on orders below INR 199,
+  of INR 25 is charged on orders below INR 199, and delivery is free on orders of INR 199 or more.",delivery_policy.txt;delivery_policy.txt;payment_policy.txt
+On orders of what value is delivery free?,delivery_policy.txt,True,True,False,INR 199 or more,"of INR 25 is charged on orders below INR 199, and delivery is free on orders of INR 199 or more.",delivery_policy.txt;delivery_policy.txt;payment_policy.txt
+Why does the electronics delivery need a one time password?,delivery_policy.txt,True,True,False,one time password,Electronics items are delivered only after the customer shares a one time password with the rider.,delivery_policy.txt;delivery_policy.txt;payment_policy.txt
+Is cash on delivery available for a large order?,payment_policy.txt,True,True,False,INR 2500,Cash on delivery is available only for orders up to INR 2500.,payment_policy.txt;payment_policy.txt;payment_policy.txt
+How soon is money returned when a payment fails but is deducted?,payment_policy.txt,True,True,False,48 hours,"If a payment fails but money is deducted, the amount is returned automatically
+  fails but money is deducted, the amount is returned automatically within 48 hours.",payment_policy.txt;payment_policy.txt;refund_policy.txt
+Can wallet balance be refunded as cash?,payment_policy.txt,True,True,False,never refunded as cash,Wallet balance can be used for any order and is never refunded as cash.,payment_policy.txt;payment_policy.txt;payment_policy.txt
+When are delivery addresses deleted from active systems?,privacy_policy.txt,True,True,False,180 days,"Delivery addresses are deleted from active systems 180 days after
+  Delivery addresses are deleted from active systems 180 days after the last order.",privacy_policy.txt;privacy_policy.txt;delivery_policy.txt
+How fast must a fraud ticket reach the security team?,escalation_policy.txt,True,True,False,within 2 hours,A ticket about fraud or an unauthorized transaction is marked high priority and sent to the security team within 2 hours.,escalation_policy.txt;escalation_policy.txt;escalation_policy.txt
+After how many steps must an automated assistant hand over to a human?,escalation_policy.txt,True,True,False,6 steps,"If an automated assistant cannot resolve a ticket within 6 steps, it must hand the case to a human agent with a short summary.",escalation_policy.txt;escalation_policy.txt;delivery_policy.txt
+What is the favourite colour of the company mascot?,NONE,True,False,True,,I could not find that information in the policy documents.,delivery_policy.txt;refund_policy.txt;delivery_policy.txt
+Who won the cricket world cup final?,NONE,True,False,True,,I could not find that information in the policy documents.,payment_policy.txt;delivery_policy.txt;privacy_policy.txt
