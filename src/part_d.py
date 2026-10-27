@@ -144,7 +144,7 @@ def _run_loop(state, max_iterations, token_limit, time_limit_seconds, crash_afte
             "steps":state["steps"],"llm_calls":state["llm_calls"],"tokens_used":state["tokens_used"]}
 
 def run_agent(user_message, scenario_id, max_iterations=6, token_limit=6000, time_limit_seconds=10, run_id=None, crash_after_tools=None):
-    run_id=run_id or f"{scenario_id}_{int(time.time()*1000)}"
+    run_id=run_id or f"{scenario_id}_run"
     state={"run_id":run_id,"scenario_id":scenario_id,"messages":[
         {"role":"system","content":"You are an AGENT. Use tools to verify order status and policy before acting."},
         {"role":"user","content":user_message}],"tokens_used":0,"step_number":0,"tools_executed":[],"steps":[],"llm_calls":0}
@@ -162,6 +162,9 @@ def resume_agent(run_id, max_iterations=6, token_limit=6000, time_limit_seconds=
 
 def main():
     global retriever
+    STATE.mkdir(exist_ok=True)
+    for checkpoint in STATE.glob("*.json"):
+        checkpoint.unlink()
     retriever=PolicyRetriever(overlap=10)
     print("CHUNKS",len(retriever.chunks),pd.Series([x["source"] for x in retriever.chunks]).value_counts().to_dict())
     print("TOP REFUND RETRIEVAL",[(x["source"],round(x["score"],3)) for x in retriever.retrieve("refund policy late delivery",3)])
